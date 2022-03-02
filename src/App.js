@@ -1,25 +1,69 @@
-import logo from './logo.svg';
+import React from 'react';
+import styled from 'styled-components';
 import './App.css';
+import Addmodal from './Compononts/addmodul/addmodal';
+import Sidebar from './Compononts/Sidebar/Sidebar';
+import Courses from './Compononts/coursesection/Courses'
+import TotalCourses from './Compononts/TotalCources/TotalCources';
+import TotalCourses3 from './Compononts/Coursecollection/Coursecollection';
+import SpecializationAdding from './Compononts/FormSpecialist/SpecilalistAdd';
+import FooterAll from './Compononts/FooterAll/FooterAll'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <LeftContent>
+        <Sidebar/>
+        </LeftContent>
+        
+        <RightContent>
+          <Row>
+              <Addmodal/>
+          </Row>
+
+            <Row>
+              <SpecializationAdding></SpecializationAdding>
+            {/* <Courses/> */}
+            <TotalCourses3 />
+
+            </Row>
+
+            <Row>
+              <FooterAll/>
+            </Row>
+
+      
+        
+        </RightContent>
+        
+      </Container>
+      
     </div>
   );
 }
 
 export default App;
+
+
+const Container = styled.div`
+width: 100vw;
+height: 100%;
+position: relative;
+display: flex;
+box-sizing: border-box;
+position: relative;
+
+`
+const Row=styled.div`
+width:100%;
+display: flex;
+`
+const LeftContent=styled.div`
+width:8%;
+background-color:blue;`
+
+const RightContent=styled.div`width:92%; 
+/* background-color: green; */
+`
